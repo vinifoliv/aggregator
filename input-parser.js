@@ -13,7 +13,7 @@ module.exports.parse_input = function (input) {
     arg = input.split(' ')[ARGUMENT_INDEX];
 
     if (arg != undefined || arg != null) {
-        if (!arg.includes(HTTP_CONNECTION_REQUEST))
+        if (instr.includes('add') && !arg.includes(HTTP_CONNECTION_REQUEST))
             arg = HTTP_CONNECTION_REQUEST + arg;
     }
     else 

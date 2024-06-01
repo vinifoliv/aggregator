@@ -3,8 +3,7 @@ module.exports.show = function(argument) {
 
     switch (argument) {
         case 'feeders':
-            const feeders = fs.readFileSync('./user/feeders.txt', 'utf8');
-            console.log(feeders);
+            let feeders = fs.readFileSync('./user/feeders.txt', 'utf8');
 
             feeders = feeders.split(';');
                 
@@ -18,5 +17,10 @@ module.exports.show = function(argument) {
             feeders.forEach(feeder => {
                 console.log(feeder);
             });
+            break;
+
+        default:
+            console.log('Error: ' + argument);
+            break;
     }
 }
